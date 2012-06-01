@@ -235,9 +235,9 @@
 
 
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>jaxws-maven-plugin
-				</artifactId>
+				<groupId>org.jvnet.jax-ws-commons</groupId>
+				<artifactId>jaxws-maven-plugin</artifactId>
+				<version>2.2</version>
 				<executions>
 					<execution>
 						<id>wsigen</id>
@@ -268,6 +268,13 @@
 						</configuration>
 					</execution>
 				</executions>
+				<!-- <dependencies> -->
+				<!-- <dependency> -->
+				<!-- <groupId>com.sun.xml.bind</groupId> -->
+				<!-- <artifactId>jaxb-xjc</artifactId> -->
+				<!-- <version>2.1.6</version> -->
+				<!-- </dependency> -->
+				<!-- </dependencies> -->
 			</plugin>
 
 			<plugin>
@@ -292,6 +299,10 @@
 					</execution>
 				</executions>
 			</plugin>
+
+
+
+
 		</plugins>
 		<pluginManagement>
 			<plugins>
@@ -333,6 +344,26 @@
 										</artifactId>
 										<versionRange>
 											[1.10,)
+										</versionRange>
+										<goals>
+											<goal>wsgen</goal>
+											<goal>wsimport</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore></ignore>
+									</action>
+								</pluginExecution>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>
+											org.jvnet.jax-ws-commons
+										</groupId>
+										<artifactId>
+											jaxws-maven-plugin
+										</artifactId>
+										<versionRange>
+											[2.2,)
 										</versionRange>
 										<goals>
 											<goal>wsgen</goal>
